@@ -1,0 +1,37 @@
+.edit-modal
+    position: absolute
+    top: 35%
+    left: 35%
+    background-color: grey
+    width: 300px
+    height: 100px
+    padding: 20px 10px
+    display: grid
+    grid-template: 1fr 1fr 1fr / 1fr 1fr
+    row-gap: 5px
+    border-radius: 5px
+    z-index: 3
+    &__overlay
+        position: fixed
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+        background-color: rgba(0,0,0, 0.7)
+        z-index: 2
+    &__name
+        width: min-content
+        margin-right: 5px
+    &__title
+        align-items: center
+        grid-column: 2 span
+        display: flex
+    &-info
+        grid-column: 2 span
+        display: grid
+        grid-template: 1fr 1fr/ 1fr 1fr
+        &__price
+            grid-column: 2 span
+    &__close
+        width: 100%
+        grid-column: 2 span

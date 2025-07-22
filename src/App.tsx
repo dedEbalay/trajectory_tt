@@ -2,32 +2,28 @@ import React, { useEffect } from 'react';
 import { OnLoadRequest } from './redux/actions';
 import { connect } from 'react-redux';
 import onLoadService from './services/onLoadService';
+import CarList from './components/CarList/CarList';
+import './style.css'
+import EditModal from './components/EditModal/EditModal';
 
 function App(props:any) {
 
   useEffect(() => {
     onLoadService().then(resp => {
-      console.log(resp)
       props.OnLoadRequest(resp)
     })
   }, [])
 
-  console.log('test');
-  
-
   return (
     <div className="app-container">
-      <h1 onClick={() => {
-        console.log('CLICK');
-        props.testAction()
-      }}>hello world</h1>
+      <EditModal />
+      <CarList />
     </div>
   );
 }
 
 const mapStateToProps = (store:any) => {
   return {
-    // loadedPosts: store.posts
   }
 }
 

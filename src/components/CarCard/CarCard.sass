@@ -1,0 +1,45 @@
+.card
+    &-container
+        border: 1px black solid
+        border-radius: 5px
+        width: max-content
+        display: grid
+        flex-direction: column
+        padding: 10px 5px
+        margin: 5px
+        grid-template: 20px 20px 1fr/ 1fr 1fr
+        height: max-content
+        justify-content: center
+        &__title
+            grid-column: span 2
+            font-size: 12px
+            font-weight: bold
+        &__edit, &__delete
+            align-self: center
+            justify-self: center
+            font-size: 8px
+            font-weight: bold
+            border: 1px black solid
+            padding: 4px
+        &__edit
+            background-color: yellow
+        &__delete
+            background-color: red
+    &-info
+        grid-column: span 2
+        align-items: center
+        justify-content: center
+        display: flex
+        flex-wrap: nowrap
+        flex-direction: row
+        display: grid
+        grid-template: 1fr 1fr/ 1fr 1fr
+        gap: 5px
+        width: 300px
+        height: max-content
+        padding: 5px
+        font-size: 10px
+        &__price
+            grid-column: 1 / span 2
+            justify-self: center
+            font-weight: bold

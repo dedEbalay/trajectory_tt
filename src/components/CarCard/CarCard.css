@@ -1,0 +1,54 @@
+.card-container {
+  border: 1px black solid;
+  border-radius: 5px;
+  width: -moz-max-content;
+  width: max-content;
+  display: grid;
+  flex-direction: column;
+  padding: 10px 5px;
+  margin: 5px;
+  grid-template: 20px 20px 1fr/1fr 1fr;
+  height: -moz-max-content;
+  height: max-content;
+  justify-content: center;
+}
+.card-container__title {
+  grid-column: span 2;
+  font-size: 12px;
+  font-weight: bold;
+}
+.card-container__edit, .card-container__delete {
+  align-self: center;
+  justify-self: center;
+  font-size: 8px;
+  font-weight: bold;
+  border: 1px black solid;
+  padding: 4px;
+}
+.card-container__edit {
+  background-color: yellow;
+}
+.card-container__delete {
+  background-color: red;
+}
+.card-info {
+  grid-column: span 2;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr;
+  gap: 5px;
+  width: 300px;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 5px;
+  font-size: 10px;
+}
+.card-info__price {
+  grid-column: 1/span 2;
+  justify-self: center;
+  font-weight: bold;
+}/*# sourceMappingURL=CarCard.css.map */

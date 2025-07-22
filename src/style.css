@@ -1,0 +1,4 @@
+@import './components/CarCard/CarCard.css';
+@import './components/CarList/CarList.css';
+@import './components/SortMenu/SortMenu.css';
+@import './components/EditModal/EditModal.css';
