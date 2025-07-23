@@ -17,7 +17,7 @@ function App(props:Prop) {
     onLoadService().then(resp => {
       props.OnLoadRequest(resp)
     })
-  }, [])
+  })
 
   return (
     <div className="app-container">
