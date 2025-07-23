@@ -2,3 +2,15 @@
 @import './components/CarList/CarList.css';
 @import './components/SortMenu/SortMenu.css';
 @import './components/EditModal/EditModal.css';
+@import './components/Map/Map.css';
+
+.noscroll {
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

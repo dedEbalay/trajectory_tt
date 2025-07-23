@@ -33,6 +33,7 @@ function EditModal(props:Prop) {
                         </div>
                     </div>
                     <button className="edit-modal__close" onClick={() => {
+                        document.body.classList.remove('noscroll')
                         props.CloseEditModal(name, price)
                     }}>Закрыть и сохранить</button>
                 </div>

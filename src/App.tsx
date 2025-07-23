@@ -6,6 +6,8 @@ import CarList from './components/CarList/CarList';
 import './style.css'
 import EditModal from './components/EditModal/EditModal';
 import { stateInterface } from './interfaces';
+import Map from './components/Map/Map';
+import { YMaps } from '@pbe/react-yandex-maps';
 
 interface Prop {
   OnLoadRequest: Function
@@ -20,10 +22,13 @@ function App(props:Prop) {
   })
 
   return (
-    <div className="app-container">
-      <EditModal />
-      <CarList />
-    </div>
+    <YMaps>
+      <div className="app-container">
+        <Map />
+        <EditModal />
+        <CarList />
+      </div>
+    </YMaps>
   );
 }
 

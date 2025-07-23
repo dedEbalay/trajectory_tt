@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  height: 100vh;
   overflow: scroll;
   font-size: 40px;
 }

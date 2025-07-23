@@ -15,7 +15,7 @@ const initialState = {
         color: '',
         id: 0,
         latitude: 0,
-        longtitude: 0
+        longitude: 0
     }
 }
 

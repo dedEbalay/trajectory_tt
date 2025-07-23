@@ -13,6 +13,7 @@ function CarCard (props:Prop) {
             <div className="card-container__title">Модель:{props.name} {props.model}</div>
             <div className="card-container__edit" onClick={() => {
                 props.OpenEditModal(props.id)
+                document.body.classList.add('noscroll')
             }}>Редактировать</div>
             <div className="card-container__delete" onClick={() => {
                 props.DeleteElement(props.id)
