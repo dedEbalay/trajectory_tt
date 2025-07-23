@@ -6,7 +6,7 @@ export interface Post {
     color: string,
     price: number,
     latitude: number,
-    longtitude: number
+    longitude: number
 }
 
 export interface stateInterface {
