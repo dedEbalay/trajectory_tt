@@ -3,14 +3,15 @@
     top: 35%
     left: 35%
     background-color: grey
-    width: 300px
-    height: 100px
+    width: 600px
+    height: 300px
     padding: 20px 10px
     display: grid
     grid-template: 1fr 1fr 1fr / 1fr 1fr
     row-gap: 5px
     border-radius: 5px
     z-index: 3
+    font-size: 30px
     &__overlay
         position: fixed
         top: 0
@@ -20,6 +21,7 @@
         background-color: rgba(0,0,0, 0.7)
         z-index: 2
     &__name
+        font-size: 30px
         width: min-content
         margin-right: 5px
     &__title
@@ -32,6 +34,9 @@
         grid-template: 1fr 1fr/ 1fr 1fr
         &__price
             grid-column: 2 span
+        &__input
+            font-size: 30px
     &__close
+        font-size: 35px
         width: 100%
         grid-column: 2 span
