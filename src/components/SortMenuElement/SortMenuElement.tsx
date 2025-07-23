@@ -1,7 +1,14 @@
 import { connect } from "react-redux"
 import { SortByPrice, SortByYear } from "../../redux/actions"
+import { stateInterface } from "../../interfaces"
 
-function SortMenuElement(props:any) {
+interface Prop {
+    name: string,
+    SortByYear: Function,
+    SortByPrice: Function
+}
+
+function SortMenuElement(props:Prop) {
     switch (props.name) {
         case 'YEAR':
             return (
@@ -22,7 +29,7 @@ function SortMenuElement(props:any) {
     }   
 }
 
-const mapStateToProps = (store:any) => {
+const mapStateToProps = (store:stateInterface) => {
     return {
 
     }

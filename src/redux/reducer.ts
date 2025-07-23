@@ -1,14 +1,5 @@
-import { Post } from '../interfaces'
+import { Post, stateInterface } from '../interfaces'
 import { actionInterface } from './actions'
-
-interface stateInterface {
-    posts: Post[],
-    sortMenuVisibility: boolean,
-    editModalVisibility: boolean,
-    sortList: string[],
-    currentPost: Post,
-    currentSorting: string
-}
 
 const initialState = {
     posts: [],
@@ -54,11 +45,6 @@ const reducer = (state:stateInterface=initialState, action: actionInterface) => 
                 ...state,
                 posts: action.payload
             }
-        case 'TEST':
-            console.log('TEST');
-            return {
-                ...state
-            } 
         case 'TOGGLESORTMENUVISIBILITY':     
             return {
                 ...state,
@@ -115,7 +101,3 @@ const reducer = (state:stateInterface=initialState, action: actionInterface) => 
 }
 
 export default reducer
-
-function createArr(id: number): Post {
-    throw new Error('Function not implemented.')
-}

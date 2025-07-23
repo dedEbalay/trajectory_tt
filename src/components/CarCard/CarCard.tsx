@@ -1,7 +1,13 @@
 import { connect } from "react-redux"
 import { DeleteElement, OpenEditModal } from "../../redux/actions"
+import { Post, stateInterface } from "../../interfaces"
 
-function CarCard (props:any) {
+interface Prop extends Post {
+    OpenEditModal: Function,
+    DeleteElement: Function
+}
+
+function CarCard (props:Prop) {
     return (
         <div className="card-container">
             <div className="card-container__title">Модель:{props.name} {props.model}</div>
@@ -20,7 +26,7 @@ function CarCard (props:any) {
     )
 }
 
-const mapStateToProps = (store:any) => {
+const mapStateToProps = (store:stateInterface) => {
     return {
     }
 }

@@ -1,10 +1,15 @@
 import { connect } from "react-redux"
 import { CloseEditModal } from "../../redux/actions"
-import { Post } from "../../interfaces"
-import { useState } from "react";
+import { Post, stateInterface } from "../../interfaces"
 
-function EditModal(props:any) {
-    if (props.editModalVisibility) {
+interface Prop {
+    currentPost: Post,
+    EditModalVisibility: boolean,
+    CloseEditModal: Function
+}
+
+function EditModal(props:Prop) {
+    if (props.EditModalVisibility) {
         let name = props.currentPost.name,
             price = props.currentPost.price
         return (
@@ -12,7 +17,7 @@ function EditModal(props:any) {
                 <div className="edit-modal__overlay" />
                 <div className="edit-modal">
                     <div className="edit-modal__title">Модель:
-                        <input type="text" className="edit-modal__name" defaultValue={props.currentPost.name} onChange={(e):any => {
+                        <input type="text" className="edit-modal__name" defaultValue={props.currentPost.name} onChange={(e:React.ChangeEvent<HTMLInputElement>) => {
                             name = (e.target.value)                 
                         }}/>
                         <div className="edit-modal__model">{props.currentPost.model}</div>
@@ -22,7 +27,7 @@ function EditModal(props:any) {
                         <div className="edit-modal-info__color">Цвет:{props.currentPost.color}</div>
                         <div className="edit-modal-info__price">
                             Цена:
-                            <input type="text" className="edit-modal-info__input" defaultValue={props.currentPost.price.toString()} onChange={(e):any => {
+                            <input type="text" className="edit-modal-info__input" defaultValue={props.currentPost.price.toString()} onChange={(e:React.ChangeEvent<HTMLInputElement>) => {
                                 price = (+e.target.value)
                             }}/>
                         </div>
@@ -39,9 +44,9 @@ function EditModal(props:any) {
     )
 }
 
-const mapStateToProps = (store:any) => {
+const mapStateToProps = (store:stateInterface) => {
     return {
-        editModalVisibility: store.editModalVisibility,
+        EditModalVisibility: store.editModalVisibility,
         currentPost: store.currentPost
     }
 }

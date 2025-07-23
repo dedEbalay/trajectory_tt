@@ -8,3 +8,12 @@ export interface Post {
     latitude: number,
     longtitude: number
 }
+
+export interface stateInterface {
+    posts: Post[],
+    sortMenuVisibility: boolean,
+    editModalVisibility: boolean,
+    sortList: string[],
+    currentPost: Post,
+    currentSorting: string
+}

@@ -5,8 +5,13 @@ import onLoadService from './services/onLoadService';
 import CarList from './components/CarList/CarList';
 import './style.css'
 import EditModal from './components/EditModal/EditModal';
+import { stateInterface } from './interfaces';
 
-function App(props:any) {
+interface Prop {
+  OnLoadRequest: Function
+}
+
+function App(props:Prop) {
 
   useEffect(() => {
     onLoadService().then(resp => {
@@ -22,7 +27,7 @@ function App(props:any) {
   );
 }
 
-const mapStateToProps = (store:any) => {
+const mapStateToProps = (store:stateInterface) => {
   return {
   }
 }

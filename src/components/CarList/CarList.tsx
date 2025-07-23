@@ -1,10 +1,15 @@
 import { connect } from "react-redux"
 import CarCard from "../CarCard/CarCard"
-import { Post } from "../../interfaces"
+import { Post, stateInterface } from "../../interfaces"
 import SortMenu from "../SortMenu/SortMenu"
 import { ToggleSortMenuVisibility } from "../../redux/actions"
+interface Prop {
+    loadedCars: Post[],
+    sorting: string,
+    ToggleSortMenuVisibility: Function
+}
 
-function CarList(props:any) {
+function CarList(props:Prop) {
     const {loadedCars, sorting} = props
     let sortType:string;
     switch (sorting) {
@@ -38,7 +43,7 @@ function CarList(props:any) {
     )
 }
 
-const mapStateToProps = (store:any) => {
+const mapStateToProps = (store:stateInterface) => {
     return {
         loadedCars: store.posts,
         sorting: store.currentSorting

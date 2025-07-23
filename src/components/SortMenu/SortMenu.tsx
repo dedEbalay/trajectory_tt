@@ -1,12 +1,18 @@
 import { connect } from "react-redux"
 import SortMenuElement from "../SortMenuElement/SortMenuElement"
+import { stateInterface } from "../../interfaces"
 
-function SortMenu(props:any) {
+interface Prop {
+    menuVisibility: boolean,
+    sortList: string[]
+}
+
+function SortMenu(props:Prop) {
     let i = 0
     if (props.menuVisibility) {
         return (
             <div className="sort-menu">
-                {props.sortList.map((item:any) => {
+                {props.sortList.map((item:string) => {
                     return (
                         <SortMenuElement key={i++} name={item}/>
                     )
@@ -19,7 +25,7 @@ function SortMenu(props:any) {
     )
 }
 
-const mapStateToProps = (store:any) => {
+const mapStateToProps = (store:stateInterface) => {
     return {
         menuVisibility: store.sortMenuVisibility,
         sortList: store.sortList
